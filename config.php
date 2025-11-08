@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "bd_shoppesite";
+$dbname = "unama_bd";
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
