@@ -2,39 +2,74 @@
 include("config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-    $cpf = $_POST['cpf'];
-    $data_nasc = $_POST['data_nascimento'];
+  
+    $nome       = $_POST['nome'];
+    $email      = $_POST['email'];
+    $senha      = $_POST['senha'];
+    $cpf        = $_POST['cpf'];
+    $data_nasc  = $_POST['data_nascimento'];
 
-    $sql = "INSERT INTO clientes (nome, email, senha, cpf, data_nascimento)
-            VALUES ('$nome', '$email', '$senha', '$cpf', '$data_nasc')";
-    if ($conn->query($sql) === TRUE) {
-        echo "Cadastro realizado com sucesso! <a href='login.php'>Fazer login</a>";
+    $telefone   = $_POST['telefone'];
+    $tipo       = $_POST['tipo'];
+
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+
+    $sql_Clientes = $conn->prepare("
+        INSERT INTO clientes (nome, email, senha, cpf, data_nascimento)
+        VALUES (?, ?, ?, ?, ?)
+    ");
+    $sql_Clientes->bind_param("sssss", $nome, $email, $senhaHash, $cpf, $data_nasc);
+
+    if ($sql_Clientes->execute()) {
+
+        $id_cliente = $conn->insert_id;
+
+        $sql_tel = $conn->prepare("
+            INSERT INTO telefones (id_cliente, numero, tipo)
+            VALUES (?, ?, ?)
+        ");
+        $sql_tel->bind_param("iss", $id_cliente, $telefone, $tipo);
+        $sql_tel->execute();
+
+        echo "<script>alert('Cadastro realizado com sucesso!'); window.location='login.php';</script>";
+
     } else {
-        echo "Erro: " . $conn->error;
+        echo "❌ ERRO ao cadastrar cliente: " . $conn->error;
     }
+
+    $sql_Clientes->close();
     $conn->close();
-} else {
+}
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
 </head>
 <body>
-    <h2>Cadastro de Cliente</h2>
-    <form method="POST" action="">
-        Nome: <input type="text" name="nome" required><br><br>
-        E-mail: <input type="email" name="email" required><br><br>
-        CPF: <input type="text" name="cpf" required><br><br>
-        Data de Nascimento: <input type="date" name="data_nascimento"><br><br>
-        Senha: <input type="password" name="senha" required><br><br>
-        <input type="submit" value="Cadastrar">
-    </form>
-    <p><a href="login.php">Já tem conta? Login</a></p>
+    <form method="POST">
+
+<input type="text"   name="nome" placeholder="Nome" required><br><br>
+<input type="email"  name="email" placeholder="E-mail" required><br><br>
+<input type="password" name="senha" placeholder="Senha" required><br><br>
+<input type="text"   name="cpf" placeholder="CPF" required><br><br>
+<input type="date"   name="data_nascimento" required><br><br>
+
+<input type="text"   name="telefone" placeholder="Telefone" required><br><br>
+
+<select name="tipo">
+   <option value="celular">Celular</option>
+   <option value="residencial">Residencial</option>
+   <option value="comercial">Comercial</option>
+</select><br><br>
+
+<button type="submit">Cadastrar</button>
+<button type="reset">Limpar</button>
+<button type="button" onclick="window.location.href='index.php'">Voltar</button>
+</form>
+
 </body>
 </html>
-<?php } ?>
