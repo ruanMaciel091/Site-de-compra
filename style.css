@@ -1,0 +1,343 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.container{
+    max-width: 100vw;
+    margin: auto;
+    transition: transform .5s;
+}
+
+header {
+  background:#ff6600; 
+  color:#fff;
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between;
+  gap:12px; 
+  padding:12px 18px;
+}
+
+header .header-buttons span {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    border-radius: 50%;
+    position: absolute;
+    top: 28px;
+    right: 6px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  width: 250px;
+}
+
+.search-bar button {
+  background-color: white;
+  color: #ff5722;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header-buttons button {
+  margin-left: 10px;
+  background-color: white;
+  color: #ff5722;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.categorias {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.categorias a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;              
+  justify-items: center;  
+  align-items: stretch;   
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 250px;       
+  height: 350px;          
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+}
+
+.card button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #222;
+  color: white;
+  margin-top: 70px;
+}
+
+.cartTab {
+    width: 400px;
+    background-color: white;
+    color: black;
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+}
+
+body.showCart .cartTab{
+    inset: 0 0 0 auto;
+}
+
+body.showCart .container{
+    transform: translateX(-250px);
+}
+
+.cartTab h2{
+    font-size: 1.5rem;
+    padding: 20px;
+    margin: 0;
+    font-weight: 250;
+    background-color: #ff6600;
+    color: #f2f2f2;
+}
+
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button{
+    background-color: #333;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cartTab .btn .fechar{
+    background-color: rgb(243, 39, 39);
+}
+
+.cartTab .btn .comprar{
+    background-color: rgb(78, 230, 78);
+}
+
+.cartTab .ListCart .item img{
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 100%;
+}
+
+.cartTab .ListCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.ListCart .qtde span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ListCart .qtde span:nth-child(2) {
+    background-color: transparent;
+    color: black;
+}
+
+.ListCart .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+.ListCart{
+    overflow: auto;
+}
+
+.ListCart::-webkit-scrollbar{
+    width: 0;
+}
+
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; 
+    padding: 10px;
+}
+
+
+.cartTab .btn button {
+    color: white;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cartTab .ListCart .item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    gap: 15px;
+}
+
+.cartTab .ListCart .item img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.cartTab .ListCart .item .detalhes {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.cartTab .ListCart .item .nome {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.cartTab .ListCart .item .preco {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.cartTab .ListCart .item .qtde {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cartTab .ListCart .item .qtde button {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cartTab .ListCart .item .qtde span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    min-width: 20px;
+    text-align: center;
+}
+
+.cartTab .ListCart .item .remover {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #ff5722;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: 0.2s;
+    align-self: flex-end;
+    white-space: nowrap;
+}
+
+.cartTab .ListCart .item .remover:hover {
+    background-color: #fff5f2;
+    border-color: #ff5722;
+}
