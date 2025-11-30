@@ -20,7 +20,11 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'admin')
 <body>
     <div class="container">
         <header>
+<<<<<<< Updated upstream:views/home.php
             <div class="logo">🛒 MinhaLoja <a href="home.php"></a></div>
+=======
+            <div class="logo">🛒 Shopee2</div>
+>>>>>>> Stashed changes:home.php
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Buscar produtos...">
                 <button onclick="buscarProduto()">Buscar</button>

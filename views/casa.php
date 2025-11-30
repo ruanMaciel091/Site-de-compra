@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">🛒 MinhaLoja</div>
+            <div class="logo">🛒 Shopee2</div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Buscar produtos...">
                 <button onclick="buscarProduto()">Buscar</button>
@@ -35,7 +35,7 @@
         $produtos = [
           ["nome" => "Geladeira eletrolux", "preco" => 3489.90, "imagem" => "https://http2.mlstatic.com/geladeira-electrolux-frost-free-310-litros-inox-110v-df36x-D_NQ_NP_826488-MLB31836284966_082019-F.jpg"],
           ["nome" => "Cadeira presidencial", "preco" => 199.90, "imagem" => "https://tse4.mm.bing.net/th/id/OIP.umiwP50NLYcHxi2A3ZfW3gHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"],
-          ["nome" => "Sofá", "preco" => 189.99, "imagem" => "https://th.bing.com/th/id/R.8729d14284dd07376f5d62e0ed3fcec0?rik=JlMgsS5AlZx%2fww&pid=ImgRaw&r=0"],
+          ["nome" => "Sofá", "preco" => 559.99, "imagem" => "https://th.bing.com/th/id/R.8729d14284dd07376f5d62e0ed3fcec0?rik=JlMgsS5AlZx%2fww&pid=ImgRaw&r=0"],
           ["nome" => "Cafeteira Elétrica", "preco" => 149.00, "imagem" => "https://carrefourbr.vtexassets.com/arquivos/ids/15891802-1280-auto?v=637541744062930000&width=1280&height=auto&aspect=true/150"]
         ];
 

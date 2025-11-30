@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">🛒 MinhaLoja</div>
+            <div class="logo">🛒 Shopee2</div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Buscar produtos...">
                 <button onclick="buscarProduto()">Buscar</button>

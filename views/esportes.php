@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">🛒 MinhaLoja</div>
+            <div class="logo">🛒 Shopee2</div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Buscar produtos...">
                 <button onclick="buscarProduto()">Buscar</button>
@@ -33,10 +33,10 @@
     <div class="produtos">
       <?php
         $produtos = [
-          ["nome" => "Bola de basquete", "preco" => 129.90, "imagem" => "https://cdn.awsli.com.br/2500x2500/1537/1537255/produto/56511739652db2fd85.jpg"],
-          ["nome" => "Bola de vôlei", "preco" => 139.90, "imagem" => "https://http2.mlstatic.com/D_NQ_NP_888807-MLB31468780271_072019-F.jpg"],
-          ["nome" => "Bola de futebol", "preco" => 149.99, "imagem" => "https://decathlonpro.vteximg.com.br/arquivos/ids/31631677-1000-1000/-bola-campo-penalty-bravo-23-no-size1.jpg?v=638182898483130000"],
-          ["nome" => "bola de Tênis", "preco" => 89.00, "imagem" => "https://th.bing.com/th/id/OIP.yu931g-ZwYp5uawsWPTFFwHaHa?o=7&cb=ucfimg2rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"]
+          ["nome" => "Bola de basquete", "preco" => 79.90, "imagem" => "https://cdn.awsli.com.br/2500x2500/1537/1537255/produto/56511739652db2fd85.jpg"],
+          ["nome" => "Bola de vôlei", "preco" => 99.90, "imagem" => "https://http2.mlstatic.com/D_NQ_NP_888807-MLB31468780271_072019-F.jpg"],
+          ["nome" => "Bola de futebol", "preco" => 89.99, "imagem" => "https://decathlonpro.vteximg.com.br/arquivos/ids/31631677-1000-1000/-bola-campo-penalty-bravo-23-no-size1.jpg?v=638182898483130000"],
+          ["nome" => "bola de Tênis", "preco" => 59.00, "imagem" => "https://th.bing.com/th/id/OIP.yu931g-ZwYp5uawsWPTFFwHaHa?o=7&cb=ucfimg2rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"]
         ];
 
         foreach ($produtos as $produto) {
