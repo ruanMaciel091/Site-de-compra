@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer src="../assets/js/script.js"></script>
     <title>Minha Loja - Carrinho Lateral</title>
 </head>
 <body>
@@ -20,23 +20,23 @@
                 <button class="carrinho_btn">🛍️ Carrinho<span>0</span></button>
             </div>
         </header>
-          <nav class="categorias">
+        <nav class="categorias">
     <a href="eletronicos.php">Eletrônicos</a>
-    <a href="roupas.php">Roupas</a>
-    <a href="beleza.php">Beleza</a>
+    <a href="roupas.php">roupas</a>
+    <a href="home.php">ofertas do dia</a>
     <a href="casa.php">Casa</a>
-    <a href="home.php">Ofertas do dia</a>
+    <a href="esportes.php">Esportes</a>
   </nav>
 
   <main>
-    <h1>Esportes</h1>
+    <h1>Beleza</h1>
     <div class="produtos">
       <?php
         $produtos = [
-          ["nome" => "Bola de basquete", "preco" => 129.90, "imagem" => "https://cdn.awsli.com.br/2500x2500/1537/1537255/produto/56511739652db2fd85.jpg"],
-          ["nome" => "Bola de vôlei", "preco" => 139.90, "imagem" => "https://http2.mlstatic.com/D_NQ_NP_888807-MLB31468780271_072019-F.jpg"],
-          ["nome" => "Bola de futebol", "preco" => 149.99, "imagem" => "https://decathlonpro.vteximg.com.br/arquivos/ids/31631677-1000-1000/-bola-campo-penalty-bravo-23-no-size1.jpg?v=638182898483130000"],
-          ["nome" => "bola de Tênis", "preco" => 89.00, "imagem" => "https://th.bing.com/th/id/OIP.yu931g-ZwYp5uawsWPTFFwHaHa?o=7&cb=ucfimg2rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"]
+          ["nome" => "batom ax love", "preco" => 39.90, "imagem" => "https://ecoms1-nyc3.nyc3.cdn.digitaloceanspaces.com/51331/@v3/1675618861952-batommaxloveliquido30horascor606ate6111.jpg"],
+          ["nome" => "Gloss Patrick ta", "preco" => 79.90, "imagem" => "https://media1.popsugar-assets.com/files/thumbor/Os2ftiHqlmcagyDSf_ftsjzQso8/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2019/07/17/797/n/1922153/6f1a6e865d2f63ee147c39.32762073_/i/Best-Lip-Gloss.jpg"],
+          ["nome" => "Conjunto unhas postiças", "preco" => 59.99, "imagem" => "https://tse2.mm.bing.net/th/id/OIP.Xpbql69ryaIjmIu3d2uVxgHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"],
+          ["nome" => "Gel de cabelo masculino", "preco" => 35.70, "imagem" => "https://a-static.mlcdn.com.br/800x800/kings-premium-gel-fixador-masculino-extra-forte-240g/amidagobaldi/372a9554514311ec95874201ac18503a/4d5c23d190459e65d4b96860e5efa2af.jpg"]
         ];
 
         foreach ($produtos as $produto) {

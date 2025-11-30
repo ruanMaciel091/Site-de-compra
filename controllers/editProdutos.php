@@ -1,6 +1,6 @@
 <?php
-include "config.php";
-
+include "../config/config.php";
+include("admin_auth.php");
 $id = $_GET["id"];
 $res = $conn->query("SELECT * FROM produtos WHERE id_produto = $id");
 $prod = $res->fetch_assoc();
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <button>Salvar Alterações</button>
     </form>
-    
-    <br><a href="index.php">⬅ Voltar</a>
+
+    <br><a href="produtos.php">⬅ Voltar</a>
 </body>
 </html>

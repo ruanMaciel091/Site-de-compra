@@ -1,22 +1,32 @@
+<?php
+session_start();
+if ((isset($_SESSION['id_clientes']) && !empty($_SESSION['id_clientes']))) {
+
+} else {
+      
+}
+if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'admin') 
+    echo " <a href='../controllers/produtos.php'>Gerenciar Produtos</a>";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer src="../assets/js/script.js"></script>
     <title>Minha Loja - Carrinho Lateral</title>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">🛒 MinhaLoja</div>
+            <div class="logo">🛒 MinhaLoja <a href="home.php"></a></div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Buscar produtos...">
                 <button onclick="buscarProduto()">Buscar</button>
             </div>
             <div class="header-buttons">
-                <button onclick="alert('Função de login em breve!')">Entrar</button>
+                <a href="../controllers/logout.php"><button>Sair</button></a>
                 <button class="carrinho_btn">🛍️ Carrinho<span>0</span></button>
             </div>
         </header>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer src="../assets/js/script.js"></script>
     <title>Minha Loja - Carrinho Lateral</title>
 </head>
 <body>
@@ -21,22 +21,22 @@
             </div>
         </header>
         <nav class="categorias">
-    <a href="eletronicos.php">Eletrônicos</a>
-    <a href="roupas.php">roupas</a>
     <a href="home.php">ofertas do dia</a>
+    <a href="roupas.php">Roupas</a>
+    <a href="beleza.php">Beleza</a>
     <a href="casa.php">Casa</a>
     <a href="esportes.php">Esportes</a>
   </nav>
 
   <main>
-    <h1>Beleza</h1>
+    <h1>Eletrônicos</h1>
     <div class="produtos">
       <?php
         $produtos = [
-          ["nome" => "batom ax love", "preco" => 39.90, "imagem" => "https://ecoms1-nyc3.nyc3.cdn.digitaloceanspaces.com/51331/@v3/1675618861952-batommaxloveliquido30horascor606ate6111.jpg"],
-          ["nome" => "Gloss Patrick ta", "preco" => 79.90, "imagem" => "https://media1.popsugar-assets.com/files/thumbor/Os2ftiHqlmcagyDSf_ftsjzQso8/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2019/07/17/797/n/1922153/6f1a6e865d2f63ee147c39.32762073_/i/Best-Lip-Gloss.jpg"],
-          ["nome" => "Conjunto unhas postiças", "preco" => 59.99, "imagem" => "https://tse2.mm.bing.net/th/id/OIP.Xpbql69ryaIjmIu3d2uVxgHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"],
-          ["nome" => "Gel de cabelo masculino", "preco" => 35.70, "imagem" => "https://a-static.mlcdn.com.br/800x800/kings-premium-gel-fixador-masculino-extra-forte-240g/amidagobaldi/372a9554514311ec95874201ac18503a/4d5c23d190459e65d4b96860e5efa2af.jpg"]
+          ["nome" => "Fone Bluetooth", "preco" => 109.90, "imagem" => "https://a-static.mlcdn.com.br/800x800/fone-de-ouvido-bluetooth-pequeno-original-com-microfone-ltomex/fgcplayimports/264d1930072911eeb4554201ac185049/daf0dcbd24eadbb66f555866839ac594.jpeg"],
+          ["nome" => "teclado gamer", "preco" => 229.99, "imagem" => "https://cdn.awsli.com.br/2500x2500/25/25449/produto/2259076180446699e59.jpg"],
+          ["nome" => "Relógio Smart", "preco" => 159.99, "imagem" => "https://tse3.mm.bing.net/th/id/OIP.pNvdv8cgdyapaVaqq2mTFwAAAA?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"],
+          ["nome" => "Fone de gatinho", "preco" => 139.49, "imagem" => "https://http2.mlstatic.com/fone-ouvido-gatinho-bluetooth-headfone-orelha-gato-c-led-p2-D_NQ_NP_860064-MLB29576217745_032019-F.jpg"]
         ];
 
         foreach ($produtos as $produto) {

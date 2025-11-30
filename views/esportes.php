@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer src="../assets/js/script.js"></script>
     <title>Minha Loja - Carrinho Lateral</title>
 </head>
 <body>
@@ -24,19 +24,19 @@
     <a href="eletronicos.php">Eletrônicos</a>
     <a href="roupas.php">Roupas</a>
     <a href="beleza.php">Beleza</a>
+    <a href="casa.php">Casa</a>
     <a href="home.php">Ofertas do dia</a>
-    <a href="esportes.php">Esportes</a>
   </nav>
 
   <main>
-    <h1>Casa</h1>
+    <h1>Esportes</h1>
     <div class="produtos">
       <?php
         $produtos = [
-          ["nome" => "Geladeira eletrolux", "preco" => 3489.90, "imagem" => "https://http2.mlstatic.com/geladeira-electrolux-frost-free-310-litros-inox-110v-df36x-D_NQ_NP_826488-MLB31836284966_082019-F.jpg"],
-          ["nome" => "Cadeira presidencial", "preco" => 199.90, "imagem" => "https://tse4.mm.bing.net/th/id/OIP.umiwP50NLYcHxi2A3ZfW3gHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"],
-          ["nome" => "Sofá", "preco" => 189.99, "imagem" => "https://th.bing.com/th/id/R.8729d14284dd07376f5d62e0ed3fcec0?rik=JlMgsS5AlZx%2fww&pid=ImgRaw&r=0"],
-          ["nome" => "Cafeteira Elétrica", "preco" => 149.00, "imagem" => "https://carrefourbr.vtexassets.com/arquivos/ids/15891802-1280-auto?v=637541744062930000&width=1280&height=auto&aspect=true/150"]
+          ["nome" => "Bola de basquete", "preco" => 129.90, "imagem" => "https://cdn.awsli.com.br/2500x2500/1537/1537255/produto/56511739652db2fd85.jpg"],
+          ["nome" => "Bola de vôlei", "preco" => 139.90, "imagem" => "https://http2.mlstatic.com/D_NQ_NP_888807-MLB31468780271_072019-F.jpg"],
+          ["nome" => "Bola de futebol", "preco" => 149.99, "imagem" => "https://decathlonpro.vteximg.com.br/arquivos/ids/31631677-1000-1000/-bola-campo-penalty-bravo-23-no-size1.jpg?v=638182898483130000"],
+          ["nome" => "bola de Tênis", "preco" => 89.00, "imagem" => "https://th.bing.com/th/id/OIP.yu931g-ZwYp5uawsWPTFFwHaHa?o=7&cb=ucfimg2rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"]
         ];
 
         foreach ($produtos as $produto) {

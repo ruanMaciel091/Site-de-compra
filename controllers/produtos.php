@@ -1,8 +1,19 @@
 <?php
-include "config.php";
+include "../config/config.php";
+include("admin_auth.php");
+
+
 
 $result = $conn->query("SELECT * FROM produtos ORDER BY id_produto DESC");
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+</head>
+<body>
 <h2>Lista de Produtos</h2>
 <a href="addProdutos.php">➕ Cadastrar Novo Produto</a><br><br>
 
@@ -26,3 +37,7 @@ $result = $conn->query("SELECT * FROM produtos ORDER BY id_produto DESC");
 </tr>
 <?php endwhile; ?>
 </table>
+
+<br><a href="../views/home.php">⬅ Sair</a>
+</body>
+</html>

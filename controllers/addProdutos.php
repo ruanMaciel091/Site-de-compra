@@ -1,5 +1,7 @@
 <?php
-include "config.php";
+include "../config/config.php";
+include("admin_auth.php");
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -61,6 +63,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <button type="submit">Salvar</button>
     </form>
-    
-    <br><a href="index.php">⬅ Voltar</a>
+    <br><a href="produtos.php">⬅ Voltar</a>
 </body>
