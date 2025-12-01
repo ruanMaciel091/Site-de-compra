@@ -132,3 +132,74 @@ function buscarProduto() {
     const termo = document.getElementById('searchInput').value;
     alert(`Buscando por: ${termo}`);
 }
+
+let carrinho = [];
+
+
+function carregarCarrinho() {
+    const data = localStorage.getItem('carrinho');
+    if (data) carrinho = JSON.parse(data);
+    mostrarProdutos();
+}
+
+function mostrarProdutos() {
+    let lista = document.getElementById("listaProdutos");
+    lista.innerHTML = "";
+
+    let subtotal = 0;
+
+    carrinho.forEach(item => {
+        subtotal += item.preco * item.qtd;
+
+        lista.innerHTML += `
+            <div class="item">
+                <img src="${item.imagem}">
+                <div class="item-nome">${item.nome} (x${item.qtd})</div>
+                <div class="item-preco">R$ ${(item.preco * item.qtd).toFixed(2)}</div>
+            </div>
+        `;
+    });
+
+    document.getElementById("subtotal").innerText = subtotal.toFixed(2).replace(".", ",");
+    atualizarTotal();
+}
+
+let frete = 0;
+
+function buscarFrete() {
+    let cep = document.getElementById("cep").value;
+
+    fetch("calcfrete.php?ajax=1&cep=" + cep)
+        .then(res => res.text())
+        .then(txt => {
+
+            document.getElementById("freteResultado").innerHTML = txt;
+
+            
+            let valor = txt.match(/R\$ ([0-9.,]+)/);
+            if (valor) {
+                frete = parseFloat(valor[1].replace(",", "."));
+                document.getElementById("freteValor").innerText = valor[1];
+                atualizarTotal();
+            }
+        });
+}
+
+function atualizarTotal() {
+    let subtotal = parseFloat(
+        document.getElementById("subtotal").innerText.replace(",", ".")
+    );
+
+    let total = subtotal + frete;
+
+    document.getElementById("totalGeral").innerText =
+        total.toFixed(2).replace(".", ",");
+}
+
+function concluirCompra() {
+    alert("Compra finalizada com sucesso! Obrigado pela preferência 😄");
+    localStorage.removeItem("carrinho");
+    window.location.href = "index.php";
+}
+
+carregarCarrinho();

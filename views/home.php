@@ -15,22 +15,22 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'admin')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script defer src="../assets/js/script.js"></script>
+    <script defer src="../controllers/calcfrete.php"></script>
     <title>Minha Loja - Carrinho Lateral</title>
 </head>
 <body>
     <div class="container">
         <header>
-<<<<<<< Updated upstream:views/home.php
-            <div class="logo">🛒 MinhaLoja <a href="home.php"></a></div>
-=======
+
             <div class="logo">🛒 Shopee2</div>
->>>>>>> Stashed changes:home.php
+
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Buscar produtos...">
                 <button onclick="buscarProduto()">Buscar</button>
             </div>
             <div class="header-buttons">
                 <a href="../controllers/logout.php"><button>Sair</button></a>
+            
                 <button class="carrinho_btn">🛍️ Carrinho<span>0</span></button>
             </div>
         </header>
@@ -77,10 +77,13 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'admin')
         <div class="ListCart">
             
         </div>
-
+        <div>
+            <input type="text" id="cep" placeholder="Digite o CEP" onblur="pesquisacep(this.value);">
+            <h4 id="resultado"></h4>
+        </div>
         <div class="btn">
             <button class="fechar">Fechar</button>
-            <button class="comprar">Comprar</button>
+            <button class="comprar">Comprar</a></button>
         </div>
     </div>
 </body>
